@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <link href="https://fonts.googleapis.com/css?family=Catamaran|Open+Sans" rel="stylesheet">
+<head>
+  <title>Gay Rights Map | Home</title>
+  <link rel="stylesheet" media="all" href="jquery-jvectormap.css"/>
+  <script src="assets/jquery-1.8.2.js"></script>
+  <script src="jquery-jvectormap.js"></script>
+  <script src="lib/jquery-mousewheel.js"></script>
+
+  <script src="src/jvectormap.js"></script>
+
+  <script src="src/abstract-element.js"></script>
+  <script src="src/abstract-canvas-element.js"></script>
+  <script src="src/abstract-shape-element.js"></script>
+
+  <script src="src/svg-element.js"></script>
+  <script src="src/svg-group-element.js"></script>
+  <script src="src/svg-canvas-element.js"></script>
+  <script src="src/svg-shape-element.js"></script>
+  <script src="src/svg-path-element.js"></script>
+  <script src="src/svg-circle-element.js"></script>
+  <script src="src/svg-image-element.js"></script>
+  <script src="src/svg-text-element.js"></script>
+
+  <script src="src/vml-element.js"></script>
+  <script src="src/vml-group-element.js"></script>
+  <script src="src/vml-canvas-element.js"></script>
+  <script src="src/vml-shape-element.js"></script>
+  <script src="src/vml-path-element.js"></script>
+  <script src="src/vml-circle-element.js"></script>
+  <script src="src/vml-image-element.js"></script>
+
+  <script src="src/map-object.js"></script>
+  <script src="src/region.js"></script>
+  <script src="src/marker.js"></script>
+
+  <script src="src/vector-canvas.js"></script>
+  <script src="src/simple-scale.js"></script>
+  <script src="src/ordinal-scale.js"></script>
+  <script src="src/numeric-scale.js"></script>
+  <script src="src/color-scale.js"></script>
+  <script src="src/legend.js"></script>
+  <script src="src/data-series.js"></script>
+  <script src="src/proj.js"></script>
+  <script src="src/map.js"></script>
+
+  <script src="assets/jquery-jvectormap-world-mill-en.js"></script>
+  <script>
+    jQuery.noConflict();
+    jQuery(function(){
+      var $ = jQuery;
+
+      $('#focus-single').click(function(){
+        $('#map1').vectorMap('set', 'focus', {region: 'AU', animate: true});
+      });
+      $('#focus-multiple').click(function(){
+        $('#map1').vectorMap('set', 'focus', {regions: ['AU', 'JP'], animate: true});
+      });
+      $('#focus-coords').click(function(){
+        $('#map1').vectorMap('set', 'focus', {scale: 7, lat: 35, lng: 33, animate: true});
+      });
+      $('#focus-init').click(function(){
+        $('#map1').vectorMap('set', 'focus', {scale: 1, x: 0.5, y: 0.5, animate: true});
+      });
+      $('#map1').vectorMap({
+        map: 'world_mill_en',
+        panOnDrag: true,
+  //      focusOn: {
+  //        x: 0.5,
+  //        y: 0.5,
+//          scale: 2,
+  //        animate: true
+  //      },
+        series: {
+          regions: [{
+            scale: ['#DE240A', '#15A52E', '#F6CE05', '#000000'],
+            normalizeFunction: 'polynomial',
+            values: {
+              "_0": 50,
+              "_1": 50,
+              "_2": 10000,
+              "AF": 700,
+              "AL": 50,
+              "DZ": 0,
+              "AO": 0,
+              "AG": 0,
+              "AR": 50,
+              "AM": 50,
+              "AU": 50,
+              "AT": 50,
+              "AZ": 50,
+              "BS": 50,
+              "BH": 50,
+              "BD": 0,
+              "BB": 0,
+              "BY": 50,
+              "BE": 50,
+              "BZ": 50,
+              "BJ": 0,
+              "BT": 0,
+              "BO": 50,
+              "BA": 50,
+              "BW": 0,
+              "BR": 50,
+              "BN": 0,
+              "BG": 50,
+              "BF": 50,
+              "BI": 0,
+              "KH": 50,
+              "CM": 0,
+              "CA": 50,
+              "CV": 50,
+              "CF": 50,
+              "TD": 50,
+              "CL": 50,
+              "CN": 50,
+              "CO": 50,
+              "KM": 0,
+              "CU": 50,
+              "CD": 50,
+              "CG": 50,
+              "CR": 50,
+              "CI": 50,
+              "HR": 50,
+              "CY": 50,
+              "CZ": 50,
+              "DK": 50,
+              "DJ": 50,
+              "DM": 0,
+              "DO": 50,
+              "EC": 50,
+              "EG": 0,
+              "EH": 0,
+              "SV": 50,
+              "GQ": 50,
+              "ER": 0,
+              "EE": 50,
+              "ET": 0,
+              "FJ": 50,
+              "FI": 50,
+              "FK": 50,
+              "FR": 50,
+              "GA": 50,
+              "GM": 0,
+              "GE": 50,
+              "DE": 50,
+              "GH": 0,
+              "GR": 50,
+              "GL": 50,
+              "GD": 0,
+              "GT": 50,
+              "GN": 0,
+              "GW": 50,
+              "GY": 0,
+              "HT": 50,
+              "HN": 50,
+              "HK": 50,
+              "HU": 50,
+              "IS": 50,
+              "IN": 0,
+              "ID": 50,
+              "IR": 10000,
+              "IQ": 10000,
+              "IE": 50,
+              "IL": 50,
+              "IT": 50,
+              "JM": 0,
+              "JP": 50,
+              "JO": 50,
+              "KZ": 50,
+              "KE": 0,
+              "KI": 0,
+              "KP": 700,
+              "KR": 50,
+              "KW": 0,
+              "KG": 50,
+              "LA": 50,
+              "LV": 50,
+              "LB": 0,
+              "LS": 50,
+              "LR": 0,
+              "LY": 0,
+              "LT": 50,
+              "LU": 50,
+              "MK": 50,
+              "MG": 50,
+              "MW": 0,
+              "MY": 0,
+              "MV": 0,
+              "ML": 50,
+              "MT": 50,
+              "MR": 700,
+              "MU": 0,
+              "MX": 50,
+              "MD": 50,
+              "MN": 50,
+              "ME": 50,
+              "MA": 0,
+              "MZ": 50,
+              "MM": 0,
+              "NA": 700,
+              "NP": 50,
+              "NC": 50,
+              "NL": 50,
+              "NZ": 50,
+              "NI": 50,
+              "NE": 50,
+              "NG": 700,
+              "NO": 50,
+              "OM": 0,
+              "PK": 700,
+              "PA": 50,
+              "PG": 0,
+              "PY": 50,
+              "PE": 50,
+              "PH": 50,
+              "PL": 50,
+              "PT": 50,
+              "PR": 50,
+              "QA": 0,
+              "RO": 50,
+              "RU": 700,
+              "RW": 50,
+              "WS": 0,
+              "ST": 50,
+              "SA":10000,
+              "SN": 0,
+              "RS": 50,
+              "SC": 50,
+              "SL": 0,
+              "SG": 0,
+              "SK": 50,
+              "SI": 50,
+              "SB": 0,
+              "ZA": 50,
+              "ES": 50,
+              "LK": 0,
+              "KN": 0,
+              "LC": 0,
+              "VC": 0,
+              "SD": 10000,
+              "SO": 700,
+              "SR": 50,
+              "SS": 0,
+              "SZ": 0,
+              "SE": 50,
+              "CH": 50,
+              "SY": 700,
+              "TW": 50,
+              "TJ": 50,
+              "TZ": 0,
+              "TH": 50,
+              "TF": 50,
+              "TL": 50,
+              "TG": 0,
+              "TO": 0,
+              "TT": 0,
+              "TN": 0,
+              "TR": 50,
+              "TM": 0,
+              "UG": 0,
+              "UA": 50,
+              "AE": 0,
+              "GB": 50,
+              "US": 50,
+              "UY": 50,
+              "UZ": 0,
+              "VU": 50,
+              "VE": 50,
+              "VN": 50,
+              "YE": 10000,
+              "ZM": 0,
+              "ZW": 0
+            }
+          }]
+        }
+      });
+    })
+  </script>
+</head>
+<body>
+  <h1>Homosexual Legality Status Around the World</h1>
+  <p style="text-align:left;">In many nations around the world, exhibiting homosexual behavior is illegal, and can lead to jail or even death. Here are those countries, and <a href='help.html'>here's what you can do to help.</a><span style="float:right;"><a href = "marriage.html">Curious about marriage laws?</a></p>
+  <div style="clear: both;"></div>
+  <div id = "note"><p>Note: This map only shows the legal status. De facto discrimination may still occur in countries where homosexuality is legal.</p></div>
+  <center><div id="map1" style="width: 950px; height: 395px"></div></center>
+  <center><div class="legend">
+    <div class="block" id="q0-9">legal</div>
+    <div class="block" id="q1-9">illegal</div>
+    <div class="block" id="q2-9">complicated*</div>
+    <div class="block" id="q3-9">death sentence</div>
+  </div></center>
+  <br>
+  <h3>*More Info on Complicated Nations</h3>
+  <p>Afghanistan - Sharia law gives homosexuality a maximum of the death penalty, but no deaths have been recorded since the end of Taliban rule. (WP)</p>
+  <p>Mauritania - Gay men can be stoned to death by law, but no cases have been reported. Women only face prison. (WP)</p>
+  <p>Namibia - Homosexuality is legal, but sodomy is criminalized and is punishable by jail, though it is rarely enforced.</p>
+  <p>Nigeria - Some states have adopted sharia law and imposed a death penalty for men. (WP)</p>
+  <p>North Korea - 2009 revisions of the national penal code may contain provisions that could potentially be used against LGBT people in a discriminatory manner, depending on interpretation. (Wikipedia)</p>
+  <p>Pakistan - Death penalty laws exist, but are unlikely to be implemented. (WP)</p>
+  <p>Palestine - Some states outlaw homosexuality. (ILGA)</p>
+  <p>Russia - Homosexual activity was decriminalized in 1993, but in 2013, a ban on adoption of children by all couples in countries where same-sex marriage is legal was imposed, as well as a ban on homosexual propaganda. (WP)</p>
+  <p>Somalia - The penal code stipulates prison, but in some southern regions, Islamic courts have imposed Sharia law and the death penalty. (WP)</p>
+  <p>Syria - Non-state sectors implement death. (ILGA)</p>
+
+<!--  <button id="focus-single">Focus on Australia</button>
+  <button id="focus-multiple">Focus on Australia and Japan</button>
+  <button id="focus-coords">Focus on Cyprus</button>
+  <button id="focus-init">Return to the initial state</button> -->
+</body>
+</html>
